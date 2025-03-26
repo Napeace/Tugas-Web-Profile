@@ -28,4 +28,35 @@ document.addEventListener('DOMContentLoaded', function() {
             this.preload = 'auto';
         });
     });
+
+    // Animasi efek mengetik
+    const typingElement = document.querySelector('.hero-content h1');
+    const texts = ["I'm Muhammad Najmi Nafis Zuhair", "I'm an Osu Mania Player", "I'm a Mobile Legends Player"];
+    let index = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+        const currentText = texts[index];
+        if (isDeleting) {
+            typingElement.textContent = "Hello, " + currentText.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typingElement.textContent = "Hello, " + currentText.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        if (!isDeleting && charIndex === currentText.length) {
+            isDeleting = true;
+            setTimeout(typeEffect, 2000);
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            index = (index + 1) % texts.length;
+            setTimeout(typeEffect, 500);
+        } else {
+            setTimeout(typeEffect, isDeleting ? 50 : 100);
+        }
+    }
+
+    typeEffect();
 });
