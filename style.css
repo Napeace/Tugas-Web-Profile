@@ -14,7 +14,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 70px; /* Accounts for fixed navbar */
+    scroll-padding-top: 70px;
 }
 
 body {
@@ -25,7 +25,7 @@ body {
     min-height: 100vh;
 }
 
-/* New Navbar Styles */
+/* Navbar  */
 .navbar {
     background: rgba(0, 0, 0, 0.8);
     position: fixed;
@@ -262,7 +262,7 @@ body {
     padding-bottom: 10px;
 }
 
-/* OSU Mania Section */
+/* Osu Mania Section */
 .pattern-types {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -298,7 +298,7 @@ body {
 .pattern-card .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%; 
 }
 
 .pattern-card .video-container video {

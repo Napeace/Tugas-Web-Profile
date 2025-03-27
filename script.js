@@ -3,7 +3,7 @@ const modal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImage');
 const closeModal = document.querySelector('.close-modal');
 
-// Image Gallery Modal Functionality
+// Image Modal 
 galleryItems.forEach(item => {
     item.addEventListener('click', function() {
         const imgSrc = this.querySelector('img').src;
@@ -25,10 +25,9 @@ window.addEventListener('click', function(event) {
 document.addEventListener('DOMContentLoaded', function() {
     const videos = document.querySelectorAll('video');
     
-    // Video Playback Control
     videos.forEach(video => {
         video.addEventListener('play', function() {
-            // Pause all other videos
+            // Pause video
             videos.forEach(otherVideo => {
                 if (otherVideo !== this) {
                     otherVideo.pause();
@@ -36,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // Preload optimization
+        // Preload
         video.addEventListener('mouseover', function() {
             this.preload = 'auto';
         });
